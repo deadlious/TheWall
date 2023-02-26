@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wall Builder</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Build Your Wall</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="profile-data">Enter the wall profile data:</label>
+          <textarea class="form-control" id="profile-data" name="profile_data" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Build Wall</button>
+      </form>
+    </div>
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
